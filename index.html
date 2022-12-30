@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordle - Bitbucket</title>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="global-nav">
+        <div class="left">
+          <div class="nav-home">
+            <img src="imagesSvg\logo.svg" alt="Bitbucket Logo" />
+          </div>
+          <div class="nav-link active">Your work</div>
+          <div class="nav-link">Repositories</div>
+          <div class="nav-link">Projects</div>
+          <div class="nav-link" onclick="active()">
+            More
+            <button class="chevron">
+                 <img id="chevron" src="imagesSvg\arrow-thin-chevron-bottom-icon.svg">
+            </button>
+            <div class="pane">
+              <ul>
+                <li>Pull requests</li>
+                <li>Snippets</li>
+              </ul>
+            </div>
+          </div>
+          <div class="nav-link Create" onclick="dropDown()">
+            Create
+            <button class="chevron createButton">
+                 <img id="chevron" src="imagesSvg\whiteArrow.svg">
+            </button>
+            <div class="panel">
+              <ul>
+                <li class="Hover">Repository</li>
+                <li class="Hover">Project</li>
+                <li class="Hover">Snippet</li>
+                <li class="Hover">Branch</li>
+                <li class="Hover">Pull Request</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <img src="imagesSvg\search-icon.svg" alt="" class="icon-search" />
+          <input type="text" class="search" placeholder="Search" />
+          <div class="help">
+            <img src="imagesSvg\question-mark-round-icon.svg" alt="help" />
+          </div>
+          <div class="avatar">
+            <img src="https://i1.wp.com/avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/KT-6.png?ssl=1" alt="" />
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="content">
+      <nav class="left-nav">
+        <div class="navLinks2">
+            <div class="nav links2">
+                <div class="aside">
+                    <div class="images"><img style="width:40px; border-radius: 3px; padding-right: 8px;" src="https://bytebucket.org/ravatar/%7Be832b489-bf2d-4d5c-a62e-5182d9f6fb86%7D?ts=default"></div>
+                    <div class="text" style="text-align: center;
+                    height: 20px;
+                    padding: 10px;
+                    padding-top: 18px;
+                    font-weight: 600;"><p>Wordle</p></div>
+                </div>
+            </div>
+            <div class="nav links2">
+                <div class="aside">
+                    <div class="images"><img src="imagesPng\average-math-24.png"></div>
+                    <div class="text"><p>Source</p></div>
+                </div>
+            </div>
+            <div class="nav links2">
+                <div class="aside">
+                    <div class="images"><img style="transform: rotate(90deg);" src="imagesPng\commit-git-16.png"></div>
+                    <div class="text"><p>Commits</p></div>
+                </div>
+            </div>
+            <div class="nav links2">
+                <div class="aside">
+                    <div class="images"><img src="imagesPng\branch-32.png"></div>
+                    <div class="text"><p>Branches</p></div>
+                </div>
+            </div>
+            <div class="nav links2">
+                <div class="aside">
+                    <div class="images"><img src="imagesPng\pull-request-16.png"></div>
+                    <div class="text"><p>Pull requests</p></div>
+                </div>
+            </div>
+            <div class="nav links2">
+                <div class="aside">
+                    <div class="images"><img src="imagesPng\icons8-available-updates-16.png"></div>
+                    <div class="text"><p>Pipelines</p></div>
+                </div>
+            </div>
+            <div class="nav links2">
+                <div class="aside">
+                    <div class="images"><img src="imagesSvg\Deployments.svg"></div>
+                    <div class="text"><p>Deployments</p></div>
+                </div>
+            </div>
+            <div class="nav links2">
+                <div class="aside">
+                    <div class="images"><img src="imagesSvg\jirasoftware.svg"></div>
+                    <div class="text"><p>Jira issues</p></div>
+                </div>
+            </div>
+            <div class="nav links2">
+                <div class="aside">
+                    <div class="images"><img src="imagesSvg\security-shield.svg"></div>
+                    <div class="text"><p>Security</p></div>
+                </div>
+            </div>
+            <div class="nav links2 ">
+                <div class="aside">
+                    <div class="images"><img src="imagesSvg\downloads.svg"></div>
+                    <div class="text"><p>Downloads</p></div>
+                </div>
+            </div>
+            <div class="nav links2">
+                <div class="aside">
+                    <div class="images"><img src="imagesSvg\settings.svg"></div>
+                    <div class="text"><p>Repository settings</p></div>
+                </div>
+            </div>
+        </div>
+        <button class="toggle-switch" onclick="toggleNav()">
+            <img id="chevron" src="imagesSvg\arrow-thin-chevron-bottom-icon.svg"></button>
+      </nav>
+      <main>
+        <nav>
+          <span style="color:#6b778c">Wordle / Wordle Repo</span>
+        </nav>
+        <div class="repo">
+          <h1>Wordle</h1>
+          <div class="action">
+            <button>Invite</button>
+            <button>Clone</button>
+            <button><img style="width: 20px;" src="imagesSvg\three-dots-line.svg" /></button>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="dropdown">
+            <img src="imagesPng\branch-32.png"/>
+            <p>master</p>
+            <img src="imagesSvg\arrow-thin-chevron-bottom-icon.svg" />
+          </div>
+          <div class="file-filter">
+            <button onclick="dropDownList()">
+              Files
+              <img src="imagesSvg\arrow-thin-chevron-bottom-icon.svg" />
+              <div class="dropDownlist">
+                <ul class="dropDown">
+                    <li>File</li>
+                    <li>Code</li>
+                </ul>
+              </div>
+            </button
+            ><input type="text" placeholder="Filter files" />
+            <img src="imagesSvg\search-icon.svg"/>
+          </div>
+        </div>
+        <div class="code-collapse">
+          <button aria-expanded="true" type="button">
+            <img src="./imagesSvg/arrow-thin-chevron-bottom-icon.svg" /></button>
+            <img src="./imagesSvg/folder.svg"/>&nbsp;/
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="1">
+                <span>Name</span>
+              </th>
+              <th><span>Size</span></th>
+              <th><span>Last commit</span></th>
+              <th><span>Message</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="center">
+                  <img class="downloads" src="./imagesSvg/folder.svg"/>
+                  <span> data</span>
+                </div>
+              </td>
+              <td><size></size></td>
+              <td>
+                <time datetime="2022-12-17">
+                    2022-06-21
+                </time>
+              </td>
+              <td>
+                <span>
+                  <span>first commit</span>
+                </span>
+              </td>
+            </tr><tr>
+              <td>
+                <div class="center">
+                  <img class="downloads" src="./imagesSvg/folder.svg"/>
+                  <span> public</span>
+                </div>
+              </td>
+              <td><size></size></td>
+              <td>
+                <time datetime="2022-12-17">
+                  2022-06-21
+                </time>
+              </td>
+              <td>
+                <span>
+                  <span>first commit</span>
+                </span>
+              </td>
+            </tr><tr>
+              <td>
+                <div class="center">
+                  <img class="downloads" src="./imagesSvg/folder.svg"/>
+                  <span> scr</span>
+                </div>
+              </td>
+              <td><size></size></td>
+              <td>
+                <time datetime="2022-12-17">
+                    2022-06-21
+                </time>
+              </td>
+              <td>
+                <span class=>
+                  <span>first commit</span>
+                </span>
+              </td>
+            </tr><tr>
+              <td>
+                <div class="center">
+                  <img class="downloads" src="./imagesSvg/downloads.svg"/>
+                  <span> .gitignore</span>
+                </div>
+              </td>
+              <td><size>624 B</size></td>
+              <td>
+                <time datetime="2022-12-17">
+                    2022-06-21
+                </time>
+              </td>
+              <td>
+                <span>
+                  <span>first commit</span>
+                </span>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                  <div class="center">
+                    <img class="downloads" src="./imagesSvg/downloads.svg"/>
+                    <span> README.md</span>
+                  </div>
+                </td>
+                <td><size>3.28 KB</size></td>
+                <td>
+                  <time datetime="2022-12-17">
+                    2022-06-21
+                  </time>
+                </td>
+                <td>
+                  <span>
+                    <span>first commit</span>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="center">
+                    <img class="downloads" src="./imagesSvg/downloads.svg"/>
+                    <span> package-lock.json</span>
+                  </div>
+                </td>
+                <td><size>1.1 MB</size></td>
+                <td>
+                  <time datetime="2022-12-17">
+                    2022-06-21
+                  </time>
+                </td>
+                <td>
+                  <span>
+                    <span>first commit</span>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="center">
+                    <img class="downloads" src="./imagesSvg/downloads.svg"/>
+                    <span> package.json</span>
+                  </div>
+                </td>
+                <td><size>835 B</size></td>
+                <td>
+                  <time datetime="2022-12-17">
+                    2022-06-21
+                  </time>
+                </td>
+                <td>
+                  <span>
+                    <span>first commit</span>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="center">
+                    <img class="downloads" src="./imagesSvg/downloads.svg"/>
+                    <span> test.txt</span>
+                  </div>
+                </td>
+                <td><size>6 B</size></td>
+                <td>
+                  <time datetime="2022-12-17">
+                    2022-06-21
+                  </time>
+                </td>
+                <td>
+                  <span>
+                    <span>first commit</span>
+                  </span>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+
+        <div class="information">
+            <header>
+                <h4>REDME.md</h4>
+            </header>
+
+            <div>
+               <h1>Getting Started with Create React App</h1> 
+               <p>This project was bootstrapped <a href="/">with Create React App.</a></p>
+               <h2>Available Scripts</h2>
+               <p>In the project directory, you can run:</p>
+               <p>The page will reload when you make changes.\ You may also see any lint errors in the console</p>
+               <h3><code>npm start</code></h3>
+               <p>Runs the app in the development mode.\ Open 
+                    <a href="/"> http://localhost:3000</a>
+                    to view it in your browser.
+               </p>
+               <h3><code>npm test</code></h3>
+               <p>Launches the test runner in the interactive watch mode.\ See the section about running tests for more information.</p>
+               <h3><code>npm run build</code></h3>
+               <p>Builds the app for production to the build folder.\ It correctly bundles React in production mode and optimizes the build for the best performance.</p>
+               <p>The build is minified and the filenames include the hashes.\ Your app is ready to be deployed!</p>
+               <p>See the section about <a href="">deployment</a>for more information.</p>
+               <h3><code>npm run eject</code></h3>
+               <p><strong style="font-weight: bold;">Note: this is a one-way operation. Once you <code class="code">eject</code>, you can't go back!</strong></p>
+               <p>If you aren't satisfied with the build tool and configuration choices, you can <code class="code">eject</code> at any time. This command will remove the<br> single build dependency from your project.</p>
+               <p>Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full <br>control over them. All of the commands except <code class="code">eject</code> will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.</p>
+               <p>You don't have to ever use <code class="code">eject</code>. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated <br>to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.</p>
+               <h2>Learn More</h2>
+               <p>You can learn more in the <a href="https://facebook.github.io/create-react-app/docs/getting-started">Create React App documentation</a>.</p>
+               <p>To learn React, check out the <a href="https://reactjs.org/">React documentation</a>.</p>
+               <h3>Code Splitting</h3>
+               <p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/code-splitting">https://facebook.github.io/create-react-app/docs/code-splitting</a></p>
+               <h3>Analyzing the Bundle Size</h3>
+               <p>This section has moved here: <a href="https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size">https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size</a></p>
+               <h3>Making a Progressive Web App</h3>
+               <p>This section has moved here: <a  href="https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app">https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app</a></p>
+               <h3>Advanced Configuration</h3>
+               <p>This section has moved here: 
+                <a href="https://facebook.github.io/create-react-app/docs/advanced-configuration">https://facebook.github.io/create-react-app/docs/advanced-configuration</a></p>
+            
+               <h3>Deployment</h3>
+               <p>This section has moved here: <a  href="https://facebook.github.io/create-react-app/docs/deployment">https://facebook.github.io/create-react-app/docs/deployment</a></p>
+               <h3><code>npm run build</code>fails to minify</h3>
+               <p>This section has moved here: <a  href="https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify" >https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify</a></p>
+            </div>
+        </div>
+      </main>
+      <nav class="right-nav">
+        <button>
+          <img src="imagesSvg\question-mark-round-icon.svg" alt="slider"/>
+        </button>
+        <button>
+          <img src="./imagesSvg/i-round.svg"  />
+        </button>
+        <button>
+          <img src="imagesPng\icons8-available-updates-16.png"/>
+        </button>
+      </nav>
+    </div>
+  </body>
+</html>
